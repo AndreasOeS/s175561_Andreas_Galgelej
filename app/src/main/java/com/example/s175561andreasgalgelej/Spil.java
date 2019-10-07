@@ -7,12 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Spil extends AppCompatActivity {
+public class Spil extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
+
+        Galgelogik gl = new Galgelogik();
+
+        TextView ordet = (TextView) findViewById(R.id.textView3);
+        ordet.setText("Ordet: " + gl.getSynligtOrd());
 
 
 
