@@ -19,16 +19,17 @@ public class Spil extends AppCompatActivity{
         TextView ordet = (TextView) findViewById(R.id.textView3);
         ordet.setText("Ordet: " + gl.getSynligtOrd());
 
-
-
+        final TextView tv = (TextView) findViewById(R.id.textView4);
+        tv.setText("Forkerte: ");
         Button b = (Button) findViewById(R.id.button4);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tv = (TextView) findViewById(R.id.textView4);
+
                 TextView forkert = findViewById(R.id.editText);
 
-                tv.setText("Forkerte: " + forkert.getText().toString());
+
+                tv.setText(tv.getText().toString() + forkert.getText().toString());
             }
         });
     }
