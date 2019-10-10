@@ -18,7 +18,7 @@ public class Spil extends AppCompatActivity{
 
         final Galgelogik gl = new Galgelogik();
 
-        TextView ordet = (TextView) findViewById(R.id.textView3);
+        final TextView ordet = (TextView) findViewById(R.id.textView3);
         ordet.setText("Ordet: " + gl.getSynligtOrd());
 
         final TextView tv = (TextView) findViewById(R.id.textView4);
@@ -37,6 +37,10 @@ public class Spil extends AppCompatActivity{
                 for (int i = 0;i < gl.getBrugteBogstaver().size();i++){
                     tv.setText(tv.getText().toString() + bogstav.get(i));
                 }
+
+
+                ordet.setText(gl.getSynligtOrd());
+
             }
         });
     }
