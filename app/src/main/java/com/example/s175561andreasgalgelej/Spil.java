@@ -2,6 +2,7 @@ package com.example.s175561andreasgalgelej;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,13 +34,22 @@ public class Spil extends AppCompatActivity{
                 gl.gætBogstav(gæt.getText().toString());
 
                 ArrayList<String> bogstav = gl.getBrugteBogstaver();
-                tv.setText("Forkerte: ");
+                tv.setText("Brugte bogstaver: ");
                 for (int i = 0;i < gl.getBrugteBogstaver().size();i++){
-                    tv.setText(tv.getText().toString() + bogstav.get(i));
+                    tv.setText(tv.getText().toString() + bogstav.get(i) + ", ");
                 }
 
+                ordet.setText("Ordet: " + gl.getSynligtOrd());
 
-                ordet.setText(gl.getSynligtOrd());
+                if (gl.erSpilletTabt() == true){
+                    Intent startIntent = new Intent(getApplicationContext(), SpilTabt.class);
+                    startActivity(startIntent);
+                }
+
+                if (gl.erSpilletVundet() == true){
+                    Intent startIntent = new Intent(getApplicationContext(), SpilVundet.class);
+                    startActivity(startIntent);
+                }
 
             }
         });
