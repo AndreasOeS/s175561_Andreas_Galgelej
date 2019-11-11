@@ -12,12 +12,14 @@ import java.util.ArrayList;
 
 public class Spil extends AppCompatActivity{
 
+    public static final Galgelogik gl = new Galgelogik();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spil);
 
-        final Galgelogik gl = new Galgelogik();
+
 
         final TextView ordet = (TextView) findViewById(R.id.textView3);
         ordet.setText("Ordet: " + gl.getSynligtOrd());
